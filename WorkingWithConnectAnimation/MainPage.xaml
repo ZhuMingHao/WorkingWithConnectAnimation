@@ -42,7 +42,7 @@
                     </Button>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}" Grid.Row="1">
-                    <TextBlock Text="Content" Style="{ThemeResource BaseTextBlockStyle}" Margin="12" />
+                    <TextBlock Text="{Binding}" Style="{ThemeResource BaseTextBlockStyle}" Margin="12" />
                 </Grid>
             </Grid>
         </Grid>
