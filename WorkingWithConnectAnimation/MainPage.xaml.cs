@@ -28,10 +28,10 @@ namespace WorkingWithConnectAnimation
         public MainPage()
         {
             this.InitializeComponent();
-            var items = new List<string>();
+            var items = new List<Model>();
             for (int i = 0; i < 30; i++)
             {
-                items.Add(i.ToString());
+                items.Add(new Model { Title = i.ToString(), Content = i.ToString() + "index" });
             }
 
             collection.ItemsSource = items;

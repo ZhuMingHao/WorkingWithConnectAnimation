@@ -13,14 +13,22 @@
             <GridView.ItemTemplate>
                 <DataTemplate>
                     <Grid x:Name="connectedElement"  Height="100" Width="100" Background="Orange">
-                        <TextBlock Text="{Binding}" 
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="{Binding Title}" 
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
                                    TextAlignment="Center"/>
+                        <TextBlock Grid.Row="1" Text="{Binding Content,Mode=TwoWay}" 
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   TextAlignment="Center"/>
+
                     </Grid>
                 </DataTemplate>
             </GridView.ItemTemplate>
-
         </GridView>
 
         <Grid x:Name="SmokeGrid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" >
@@ -33,7 +41,7 @@
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="{ThemeResource SystemAccentColor}" Height="170">
-                    <TextBlock Style="{ThemeResource HeaderTextBlockStyle}" Margin="12" VerticalAlignment="Center" Text="{Binding}" />
+                    <TextBlock Style="{ThemeResource HeaderTextBlockStyle}" Margin="12" VerticalAlignment="Center" Text="{Binding Title}" />
                     <Button Click="BackButton_Click" HorizontalAlignment="Right" VerticalAlignment="Top" Height="40" Width="40" Margin="5" 
                             ToolTipService.ToolTip="Close" AutomationProperties.Name="Close">
                         <Button.Content>
@@ -42,7 +50,7 @@
                     </Button>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}" Grid.Row="1">
-                    <TextBlock Text="{Binding}" Style="{ThemeResource BaseTextBlockStyle}" Margin="12" />
+                    <TextBox Text="{Binding Content,Mode=TwoWay}"  Margin="12" />
                 </Grid>
             </Grid>
         </Grid>
